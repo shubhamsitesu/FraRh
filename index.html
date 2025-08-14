@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="FranceRH - Votre partenaire expert en ressources humaines en France. Solutions RH complètes pour les entreprises françaises. Recrutement, formation, gestion du personnel.">
+    <meta name="keywords" content="France RH, ressources humaines France, RH France, recrutement France, formation professionnelle, gestion RH, conseil RH">
+    <meta name="author" content="FranceRH">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="French">
+    <meta name="geo.region" content="FR">
+    <meta name="geo.placename" content="France">
+    <link rel="canonical" href="https://francerh.com" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://francerh.com">
+    <meta property="og:title" content="FranceRH - Expert en Ressources Humaines en France">
+    <meta property="og:description" content="Solutions RH complètes pour les entreprises françaises. Recrutement, formation, gestion du personnel.">
+    <meta property="og:image" content="https://francerh.com/og-image.jpg">
+    <meta property="og:locale" content="fr_FR">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://francerh.com">
+    <meta property="twitter:title" content="FranceRH - Expert en Ressources Humaines en France">
+    <meta property="twitter:description" content="Solutions RH complètes pour les entreprises françaises.">
+    <meta property="twitter:image" content="https://francerh.com/og-image.jpg">
+    
+    <!-- Schema.org markup -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ProfessionalService",
+        "name": "FranceRH",
+        "url": "https://francerh.com",
+        "logo": "https://francerh.com/logo.png",
+        "image": "https://francerh.com/og-image.jpg",
+        "description": "Votre partenaire expert en ressources humaines en France",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "FR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 46.603354,
+            "longitude": 1.888334
+        },
+        "openingHours": "Mo-Fr 09:00-18:00",
+        "telephone": "+33 1 23 45 67 89",
+        "email": "contact@francerh.com",
+        "serviceArea": {
+            "@type": "Country",
+            "name": "France"
+        },
+        "priceRange": "€€€"
+    }
+    </script>
+    
+    <title>FranceRH - Expert en Ressources Humaines en France</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Custom Styles -->
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes countdown {
+            from {
+                opacity: 1;
+            }
+            to {
+                opacity: 0.5;
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.6s ease-out;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        .animate-countdown {
+            animation: countdown 1s infinite alternate;
+        }
+        
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Custom gradient */
+        .gradient-text {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        /* Popup styles */
+        .popup-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .popup-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .popup-content {
+            background: white;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            position: relative;
+            transform: scale(0.7);
+            transition: transform 0.3s ease;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        }
+        
+        .popup-overlay.active .popup-content {
+            transform: scale(1);
+        }
+        
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 24px;
+            color: #999;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+        
+        .close-btn:hover {
+            color: #333;
+        }
+        
+        .offer-badge {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e53);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+            animation: pulse 2s infinite;
+        }
+        
+        .countdown {
+            background: #1e40af;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 15px;
+            animation: countdown 1s infinite alternate;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Domain Sale Popup -->
+    <div id="domain-popup" class="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" id="close-popup">&times;</span>
+            <div class="text-center">
+                <div class="offer-badge">OFFRE EXCLUSIVE</div>
+                <h2 class="text-2xl font-bold mb-4">Domaine Premium à Vendre</h2>
+                <div class="text-4xl font-bold gradient-text mb-4">FranceRH.com</div>
+                <p class="text-gray-600 mb-6">Ce domaine premium est idéal pour votre entreprise de ressources humaines en France. Profitez d'une présence en ligne optimale avec un nom de domaine mémorable et percutant.</p>
+                
+                <div class="bg-blue-50 p-4 rounded-lg mb-6">
+                    <div class="text-xl font-bold text-blue-800 mb-2">Avantages de ce domaine:</div>
+                    <ul class="text-left text-gray-700 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Optimisé pour le référencement en France</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Nom court et facile à mémoriser</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Idéal pour le secteur RH</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Extension .com reconnue mondialement</li>
+                    </ul>
+                </div>
+                
+                <div class="countdown">
+                    <i class="fas fa-clock mr-2"></i>Offre limitée: <span id="countdown-timer">48:00:00</span>
+                </div>
+                
+                <a href="https://www.godaddy.com/forsale/francerh.com" target="_blank" class="block mt-6 bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-3 px-6 rounded-lg font-bold hover:from-blue-700 hover:to-indigo-800 transition-all transform hover:scale-105">
+                    <i class="fas fa-shopping-cart mr-2"></i>Acheter maintenant sur GoDaddy
+                </a>
+                
+                <p class="text-sm text-gray-500 mt-4">Cette offre est exclusive et peut expirer à tout moment.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <a href="#accueil" class="text-2xl font-bold gradient-text">FranceRH</a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#accueil" class="text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#apropos" class="text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
+                    <a href="#temoignages" class="text-gray-700 hover:text-blue-600 transition-colors">Témoignages</a>
+                    <a href="#contact" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">Contact</a>
+                </div>
+                
+                <!-- Mobile menu button -->
+                <button id="mobile-menu-btn" class="md:hidden text-gray-700">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4">
+                <a href="#accueil" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Accueil</a>
+                <a href="#services" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Services</a>
+                <a href="#apropos" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">À propos</a>
+                <a href="#temoignages" class="block py-2 text-gray-700 hover:text-blue-600 transition-colors">Témoignages</a>
+                <a href="#contact" class="block py-2 bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors text-center mt-4">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="accueil" class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 animate-fadeInUp">
+                    <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+                        Votre Partenaire <span class="gradient-text">Ressources Humaines</span> en France
+                    </h1>
+                    <p class="text-xl text-gray-600 mb-8">
+                        FranceRH accompagne les entreprises françaises dans leur développement grâce à des solutions RH innovantes et sur mesure.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#contact" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors text-center">
+                            Demander un devis
+                        </a>
+                        <a href="#services" class="border-2 border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-600 hover:text-white transition-colors text-center">
+                            Découvrir nos services
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://picsum.photos/seed/francerh/600/400" alt="Ressources Humaines" class="rounded-lg shadow-xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nos Services RH</h2>
+                <p class="text-xl text-gray-600">Des solutions complètes pour répondre à tous vos besoins en ressources humaines</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-users text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Recrutement</h3>
+                    <p class="text-gray-600 mb-4">
+                        Trouvez les talents parfaits pour votre entreprise grâce à notre expertise en recrutement et notre large réseau de professionnels.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Recherche de candidats qualifiés</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Entretiens et évaluation</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Intégration des nouveaux employés</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-graduation-cap text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Formation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Développez les compétences de vos équipes avec nos programmes de formation adaptés au marché français.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Formation professionnelle continue</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Ateliers de développement des compétences</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Accompagnement individuel</li>
+                    </ul>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="bg-white p-8 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-chart-line text-4xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-semibold text-gray-800 mb-4">Gestion RH</h3>
+                    <p class="text-gray-600 mb-4">
+                        Optimisez la gestion de votre personnel avec nos outils et conseils d'experts en ressources humaines.
+                    </p>
+                    <ul class="text-gray-600 space-y-2">
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Gestion administrative du personnel</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Conformité légale française</li>
+                        <li><i class="fas fa-check text-green-500 mr-2"></i>Analyse et reporting RH</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="apropos" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <img src="https://picsum.photos/seed/francerh-team/500/400" alt="Équipe FranceRH" class="rounded-lg shadow-xl">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">À propos de FranceRH</h2>
+                    <p class="text-lg text-gray-600 mb-6">
+                        FranceRH est une agence de conseil en ressources humaines spécialisée dans l'accompagnement des entreprises françaises. Notre équipe d'experts met à votre service son expérience et sa connaissance approfondie du marché du travail français.
+                    </p>
+                    <p class="text-lg text-gray-600 mb-6">
+                        Depuis notre création, nous avons aidé des centaines d'entreprises à optimiser leur gestion des ressources humaines, à recruter les meilleurs talents et à développer les compétences de leurs équipes.
+                    </p>
+                    <div class="grid grid-cols-2 gap-6">
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">500+</div>
+                            <div class="text-gray-600">Clients satisfaits</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-bold text-blue-600">10+</div>
+                            <div class="text-gray-600">Années d'expérience</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="temoignages" class="py-20">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Ce que disent nos clients</h2>
+                <p class="text-xl text-gray-600">Découvrez les témoignages des entreprises qui nous font confiance</p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/client1/60/60" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Marie Dubois</h4>
+                            <p class="text-gray-600 text-sm">Directrice RH, TechSolutions</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        "FranceRH a transformé notre approche du recrutement. Leur expertise nous a permis de trouver des talents exceptionnels qui ont contribué à la croissance de notre entreprise."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/client2/60/60" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Jean Martin</h4>
+                            <p class="text-gray-600 text-sm">CEO, Innovation Corp</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        "Les formations proposées par FranceRH ont considérablement amélioré les compétences de nos équipes. Un partenaire fiable et professionnel."
+                    </p>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <img src="https://picsum.photos/seed/client3/60/60" alt="Client" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-semibold text-gray-800">Sophie Laurent</h4>
+                            <p class="text-gray-600 text-sm">DRH, Services Plus</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="text-gray-600">
+                        "Grâce à FranceRH, notre gestion RH est devenue plus efficace et conforme à la législation française. Je recommande vivement leurs services."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contactez-nous</h2>
+                <p class="text-xl text-gray-600">Discutons de vos besoins en ressources humaines</p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-lg shadow-xl p-8">
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nom" class="block text-gray-700 font-semibold mb-2">Nom *</label>
+                                <input type="text" id="nom" name="nom" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="entreprise" class="block text-gray-700 font-semibold mb-2">Entreprise</label>
+                                <input type="text" id="entreprise" name="entreprise" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="email" class="block text-gray-700 font-semibold mb-2">Email *</label>
+                                <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="telephone" class="block text-gray-700 font-semibold mb-2">Téléphone</label>
+                                <input type="tel" id="telephone" name="telephone" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label for="service" class="block text-gray-700 font-semibold mb-2">Service intéressé</label>
+                            <select id="service" name="service" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500">
+                                <option value="">Sélectionnez un service</option>
+                                <option value="recrutement">Recrutement</option>
+                                <option value="formation">Formation</option>
+                                <option value="gestion">Gestion RH</option>
+                                <option value="autre">Autre</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-gray-700 font-semibold mb-2">Message *</label>
+                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500"></textarea>
+                        </div>
+                        
+                        <div class="text-center">
+                            <button type="submit" class="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+                                Envoyer le message
+                            </button>
+                        </div>
+                    </form>
+                    
+                    <div id="form-message" class="mt-4 text-center hidden"></div>
+                </div>
+                
+                <!-- Contact Info -->
+                <div class="grid md:grid-cols-3 gap-6 mt-12">
+                    <div class="text-center">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-phone text-3xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Téléphone</h3>
+                        <p class="text-gray-600">+33 1 23 45 67 89</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-envelope text-3xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Email</h3>
+                        <p class="text-gray-600">contact@francerh.com</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-blue-600 mb-4">
+                            <i class="fas fa-map-marker-alt text-3xl"></i>
+                        </div>
+                        <h3 class="font-semibold text-gray-800 mb-2">Adresse</h3>
+                        <p class="text-gray-600">Paris, France</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">FranceRH</h3>
+                    <p class="text-gray-400">
+                        Votre partenaire expert en ressources humaines pour accompagner la croissance de votre entreprise en France.
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#services" class="hover:text-white transition-colors">Recrutement</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Formation</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Gestion RH</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Conseil RH</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Entreprise</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#apropos" class="hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Carrières</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="font-semibold mb-4">Suivez-nous</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter text-2xl"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <i class="fab fa-facebook text-2xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 FranceRH. Tous droits réservés. | <a href="#" class="hover:text-white transition-colors">Mentions légales</a> | <a href="#" class="hover:text-white transition-colors">Politique de confidentialité</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        // Domain popup functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const popup = document.getElementById('domain-popup');
+            const closeBtn = document.getElementById('close-popup');
+            const countdownTimer = document.getElementById('countdown-timer');
+            
+            // Show popup after 3 seconds
+            setTimeout(() => {
+                popup.classList.add('active');
+            }, 1000);
+            
+            // Close popup when clicking the close button
+            closeBtn.addEventListener('click', () => {
+                popup.classList.remove('active');
+            });
+            
+            // Close popup when clicking outside the popup content
+            popup.addEventListener('click', (e) => {
+                if (e.target === popup) {
+                    popup.classList.remove('active');
+                }
+            });
+            
+            // Countdown timer
+            let timeLeft = 48 * 60 * 60; // 48 hours in seconds
+            
+            function updateCountdown() {
+                const hours = Math.floor(timeLeft / 3600);
+                const minutes = Math.floor((timeLeft % 3600) / 60);
+                const seconds = timeLeft % 60;
+                
+                countdownTimer.textContent = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft > 0) {
+                    timeLeft--;
+                } else {
+                    // Time's up, show a message
+                    countdownTimer.textContent = "EXPIRÉ";
+                    countdownTimer.classList.remove('animate-countdown');
+                    countdownTimer.classList.add('bg-red-600');
+                }
+            }
+            
+            // Update countdown every second
+            setInterval(updateCountdown, 1000);
+            updateCountdown(); // Initial call
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const mobileLinks = mobileMenu.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+        
+        // Form submission
+        const contactForm = document.getElementById('contact-form');
+        const formMessage = document.getElementById('form-message');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form data
+            const formData = new FormData(contactForm);
+            const data = Object.fromEntries(formData);
+            
+            // Here you would normally send the data to a server
+            // For demo purposes, we'll just show a success message
+            formMessage.textContent = 'Merci pour votre message ! Nous vous contacterons rapidement.';
+            formMessage.className = 'mt-4 text-center text-green-600 font-semibold';
+            formMessage.classList.remove('hidden');
+            
+            // Reset form
+            contactForm.reset();
+            
+            // Hide message after 5 seconds
+            setTimeout(() => {
+                formMessage.classList.add('hidden');
+            }, 5000);
+        });
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all sections
+        document.querySelectorAll('section').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
