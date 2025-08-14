@@ -140,6 +140,8 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            padding: 20px;
+            box-sizing: border-box;
         }
         
         .popup-overlay.active {
@@ -150,13 +152,15 @@
         .popup-content {
             background: white;
             border-radius: 15px;
-            width: 90%;
+            width: 100%;
             max-width: 500px;
             padding: 30px;
             position: relative;
             transform: scale(0.7);
             transition: transform 0.3s ease;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-height: 90vh;
+            overflow-y: auto;
         }
         
         .popup-overlay.active .popup-content {
@@ -171,6 +175,15 @@
             color: #999;
             cursor: pointer;
             transition: color 0.3s ease;
+            z-index: 10;
+            background: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .close-btn:hover {
@@ -197,6 +210,26 @@
             display: inline-block;
             margin-top: 15px;
             animation: countdown 1s infinite alternate;
+        }
+        
+        /* Mobile-specific adjustments */
+        @media (max-width: 640px) {
+            .popup-content {
+                padding: 25px 20px;
+                border-radius: 12px;
+            }
+            
+            .close-btn {
+                top: 10px;
+                right: 10px;
+                width: 32px;
+                height: 32px;
+                font-size: 20px;
+            }
+            
+            .popup-overlay {
+                padding: 15px;
+            }
         }
     </style>
 </head>
@@ -225,7 +258,7 @@
                     <i class="fas fa-clock mr-2"></i>Offre limitée: <span id="countdown-timer">48:00:00</span>
                 </div>
                 
-                <a href="https://www.godaddy.com/forsale/francerh.com" target="_blank" class="block mt-6 bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-3 px-6 rounded-lg font-bold hover:from-blue-700 hover:to-indigo-800 transition-all transform hover:scale-105">
+                <a href="https://www.godaddy.com/fr-fr/domaines/recherche/francerh.com" target="_blank" class="block mt-6 bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-3 px-6 rounded-lg font-bold hover:from-blue-700 hover:to-indigo-800 transition-all transform hover:scale-105">
                     <i class="fas fa-shopping-cart mr-2"></i>Acheter maintenant sur GoDaddy
                 </a>
                 
@@ -233,7 +266,6 @@
             </div>
         </div>
     </div>
-
     <!-- Header -->
     <header class="bg-white shadow-sm sticky top-0 z-50">
         <nav class="container mx-auto px-6 py-4">
@@ -267,7 +299,6 @@
             </div>
         </nav>
     </header>
-
     <!-- Hero Section -->
     <section id="accueil" class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
         <div class="container mx-auto px-6">
@@ -294,7 +325,6 @@
             </div>
         </div>
     </section>
-
     <!-- Services Section -->
     <section id="services" class="py-20">
         <div class="container mx-auto px-6">
@@ -354,7 +384,6 @@
             </div>
         </div>
     </section>
-
     <!-- About Section -->
     <section id="apropos" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
@@ -384,7 +413,6 @@
             </div>
         </div>
     </section>
-
     <!-- Testimonials Section -->
     <section id="temoignages" class="py-20">
         <div class="container mx-auto px-6">
@@ -459,7 +487,6 @@
             </div>
         </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="py-20 bg-gray-100">
         <div class="container mx-auto px-6">
@@ -546,7 +573,6 @@
             </div>
         </div>
     </section>
-
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-12">
         <div class="container mx-auto px-6">
@@ -599,7 +625,6 @@
             </div>
         </div>
     </footer>
-
     <!-- JavaScript -->
     <script>
         // Domain popup functionality
@@ -709,7 +734,7 @@
         // Add animation on scroll
         const observerOptions = {
             threshold: 0.1,
-            rootMargin: '0px 0px -100px 0px'
+            rootMargin: "0px 0px -100px 0px"
         };
         
         const observer = new IntersectionObserver((entries) => {
